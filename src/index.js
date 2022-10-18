@@ -28,6 +28,7 @@ function renderImages(images) {
 		card.className = 'card';
 
 		const img = document.createElement('img');
+    img.className = 'toy-avatar';
 		img.src = elem.image;
 
 		const toyName = document.createElement('h2');
@@ -41,7 +42,7 @@ function renderImages(images) {
 		btn.id = `${elem.id}`;
 		btn.innerText = 'Like ❤️';
 		btn.addEventListener('click', () => {
-			numLikes.innerText = elem.likes++ + ' Likes';
+			numLikes.innerText = ++elem.likes + ' Likes';
 		});
 		//need to append img, toyName, numLikes, btn to div card
 		//then need to append div card to toyCollection
