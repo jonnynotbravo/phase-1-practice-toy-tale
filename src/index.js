@@ -1,18 +1,18 @@
 let addToy = false;
 
 //document.addEventListener('DOMContentLoaded', () => {
-  
-	const addBtn = document.querySelector('#new-toy-btn');
-	const toyFormContainer = document.querySelector('.container');
-	addBtn.addEventListener('click', () => {
-		// hide & seek with the form
-		addToy = !addToy;
-		if (addToy) {
-			toyFormContainer.style.display = 'block';
-		} else {
-			toyFormContainer.style.display = 'none';
-		}
-	});
+
+const addBtn = document.querySelector('#new-toy-btn');
+const toyFormContainer = document.querySelector('.container');
+addBtn.addEventListener('click', () => {
+	// hide & seek with the form
+	addToy = !addToy;
+	if (addToy) {
+		toyFormContainer.style.display = 'block';
+	} else {
+		toyFormContainer.style.display = 'none';
+	}
+});
 
 //});
 
@@ -30,7 +30,7 @@ function renderImages(images) {
 		card.className = 'card';
 
 		const img = document.createElement('img');
-    img.className = 'toy-avatar';
+		img.className = 'toy-avatar';
 		img.src = elem.image;
 
 		const toyName = document.createElement('h2');
@@ -57,3 +57,5 @@ function renderImages(images) {
 }
 
 getImage();
+
+// TEST COMMENT FOR JONNY
