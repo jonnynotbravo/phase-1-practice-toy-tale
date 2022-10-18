@@ -32,9 +32,30 @@ function getImage() {
 function renderImages(images) {
 
    images.forEach(elem => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    
     const img = document.createElement('img');
     img.src = elem.image;
-    toyCollection.append(img);
+   
+    const toyName = document.createElement('h2');
+    toyName.innerText = elem.name;
+    
+    const numLikes = document.createElement('p');
+    numLikes.innerText = elem.likes + ' Likes';
+
+    const btn = document.createElement('button');
+    btn.className = 'like-btn';
+    btn.id = `${elem.id}`
+    btn.innerText = 'Like ❤️';
+    btn.addEventListener('click', () => {
+      elem.likes ++
+    })
+    
+
+    //card.appendChild(img);
+
+    // toyCollection.append(img);
     
     
 
