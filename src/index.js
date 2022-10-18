@@ -12,7 +12,34 @@ document.addEventListener("DOMContentLoaded", () => {
       toyFormContainer.style.display = "none";
     }
   });
+
+
 });
 
+const toyCollection = document.querySelector('#toy-collection');
 
-console.log('Hey');
+
+
+
+function getImage() {
+
+  fetch(' http://localhost:3000/toys')
+  .then(response => response.json())
+   .then(data => renderImages(data));
+
+}
+
+function renderImages(images) {
+
+   images.forEach(elem => {
+    const img = document.createElement('img');
+    img.src = elem.image;
+    toyCollection.append(img);
+    
+    
+
+ })
+
+}
+
+getImage();
