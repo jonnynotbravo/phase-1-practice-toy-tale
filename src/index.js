@@ -29,12 +29,12 @@ function renderImages(images) {
 		const card = document.createElement('div');
 		card.className = 'card';
 
+    const toyName = document.createElement('h2');
+		toyName.textContent = elem.name;
+
 		const img = document.createElement('img');
 		img.className = 'toy-avatar';
 		img.src = elem.image;
-
-		const toyName = document.createElement('h2');
-		toyName.textContent = elem.name;
 
 		const numLikes = document.createElement('p');
 		numLikes.innerText = elem.likes + ' Likes';
@@ -43,15 +43,17 @@ function renderImages(images) {
 		btn.className = 'like-btn';
 		btn.id = `${elem.id}`;
 		btn.innerText = 'Like ❤️';
+
 		btn.addEventListener('click', () => {
 			numLikes.innerText = ++elem.likes + ' Likes';
 		});
-		//need to append img, toyName, numLikes, btn to div card
+		//need to append toyName, img, numLikes, btn to div card
+    //if you use .append you can append all in one go, appendChild is done one by one
 		//then need to append div card to toyCollection
-		card.appendChild(img);
-		card.appendChild(toyName);
-		card.appendChild(numLikes);
-		card.appendChild(btn);
+		card.append(toyName, img, numLikes, btn);
+		// card.appendChild(toyName);
+		// card.appendChild(numLikes);
+		// card.appendChild(btn);
 		toyCollection.appendChild(card);
 	});
 }
